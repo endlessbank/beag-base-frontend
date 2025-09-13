@@ -20,3 +20,10 @@ export type SubscriptionStatus =
   | 'PAUSED' 
   | 'RESUMED'
   | 'NO_SUBSCRIPTION'
+
+// Global window interface extensions
+declare global {
+  interface Window {
+    BEAG_DEV_MODE?: boolean
+  }
+}
