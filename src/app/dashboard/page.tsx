@@ -341,7 +341,7 @@ export default function DashboardPage() {
                 <div>
                   <p className="text-sm font-medium text-gray-600">Valid Until</p>
                   <p className="text-sm font-semibold text-gray-900 mt-1">
-                    {formatDate(userData?.endDate)}
+                    {formatDate(userData?.endDate || null)}
                   </p>
                 </div>
                 <div className="p-3 bg-yellow-100 rounded-full">

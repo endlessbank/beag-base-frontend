@@ -161,7 +161,7 @@ export default function BillingPage() {
                   <div>
                     <p className="text-sm font-medium text-gray-600">Next Billing</p>
                     <p className="text-lg font-semibold text-gray-900 mt-1">
-                      {formatDate(userData?.endDate)}
+                      {formatDate(userData?.endDate || null)}
                     </p>
                   </div>
                   <div className="p-3 bg-yellow-100 rounded-full">
