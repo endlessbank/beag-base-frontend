@@ -49,6 +49,7 @@ export default function DashboardPage() {
 
   useEffect(() => {
     const loadUserData = () => {
+      console.log('🔍 [DASHBOARD] Dashboard page loading, checking authentication...')
       try {
         const accessToken = localStorage.getItem("x_access_token")
         const email = localStorage.getItem("x_email")
@@ -58,9 +59,22 @@ export default function DashboardPage() {
         const status = localStorage.getItem("x_status")
 
         if (!email) {
+          console.log('🔍 [DASHBOARD] No email found, redirecting to login')
           window.location.href = '/login'
           return
         }
+
+        // Check if user has been processed by home page
+        const userCreatedKey = `user_created_${email}`
+        const userProcessed = sessionStorage.getItem(userCreatedKey)
+        
+        if (!userProcessed) {
+          console.log('🔍 [DASHBOARD] User not processed by home page, redirecting to home for user creation')
+          window.location.href = '/'
+          return
+        }
+
+        console.log('🔍 [DASHBOARD] User authenticated and processed, loading dashboard data')
 
         setUserData({
           accessToken,

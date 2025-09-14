@@ -19,6 +19,15 @@ export default function Home() {
         x_start_date: localStorage.getItem('x_start_date'),
         x_end_date: localStorage.getItem('x_end_date')
       })
+
+      // Clear any existing sessionStorage user creation flags to test fresh
+      console.log('🔍 [DEBUG] Clearing any existing sessionStorage user creation flags for fresh test')
+      Object.keys(sessionStorage).forEach(key => {
+        if (key.startsWith('user_created_')) {
+          console.log('🔍 [DEBUG] Removing stale sessionStorage key:', key)
+          sessionStorage.removeItem(key)
+        }
+      })
       
       // Get user email from localStorage (set by Beag after login)
       const email = localStorage.getItem('x_email')
