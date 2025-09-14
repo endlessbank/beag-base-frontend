@@ -1,73 +1,120 @@
 # Beag Base Frontend
 
-A Next.js frontend application with dual-view dashboard, integrated with Beag.io authentication and subscription management.
+A complete Next.js frontend SaaS boilerplate with dual-view dashboard, integrated with Beag.io authentication and subscription management system.
 
-## Features
+## 🎯 What This Is
 
-- 🚀 Next.js 14 with App Router
-- 🎨 Dual-View Dashboard (User/Developer toggle)
-- 🔐 Beag.io script integration for authentication
-- 📱 Responsive design with Tailwind CSS
-- 💳 Stripe Customer Portal integration
-- 🔄 Real-time subscription status display from localStorage
-- 📋 Copy-to-clipboard code examples
-- 🛡️ Protected routes with automatic redirects
+This is a **production-ready frontend template** that provides:
+- Complete SaaS user dashboard with subscription management
+- Dual-view interface (User + Developer documentation)
+- Automatic user creation and authentication flow
+- Real-time subscription status from Beag.io
+- Copy-paste code examples for developers
+- Stripe Customer Portal integration
+- Responsive design with modern UI
 
-## Prerequisites
+**Perfect for**: SaaS founders who want to launch quickly with a professional frontend that handles authentication, subscriptions, and user management out of the box.
 
-- Node.js 18+
-- Your Beag.io ID (NEXT_PUBLIC_BEAG_ID)
-- Backend API running (see backend/)
-- PostgreSQL server running
+## ✨ Features
 
-## Quick Start
+- 🚀 **Next.js 14** with App Router and TypeScript
+- 🎨 **Dual-View Dashboard** - Toggle between User and Developer perspectives
+- 🔐 **Beag.io Integration** - Complete authentication and subscription management
+- 📱 **Responsive Design** - Works perfectly on desktop, tablet, and mobile
+- 💳 **Stripe Integration** - Customer Portal for subscription management
+- 🔄 **Real-time Data** - Subscription status from localStorage (no API calls needed)
+- 📋 **Developer Tools** - Copy-to-clipboard code examples and integration guides
+- 🛡️ **Protected Routes** - Automatic redirects and authentication guards
+- 🎯 **Modern UI** - Professional gradients, animations, and interactive elements
 
-### 1. Clone and install
+## 🚀 Quick Start Guide
 
+### Prerequisites
+
+- **Node.js 18+** (Download from [nodejs.org](https://nodejs.org))
+- **Beag.io Account** with your unique Beag ID
+- **Backend API** running (see [backend README](../backend/README.md))
+
+### Step 1: Get Your Project Files
+
+**Option A: Use as Template Repository** ⭐ (Recommended)
 ```bash
-git clone <repository-url>
-cd beag-base/frontend
+# This repository should be set up as a GitHub template
+# Click "Use this template" button on GitHub
+# Or clone if template not available:
+git clone https://github.com/your-username/beag-base-frontend.git my-saas-frontend
+cd my-saas-frontend
 ```
 
-### 2. Environment setup
+**Option B: Clone Directly**
+```bash
+git clone https://github.com/your-username/beag-base-frontend.git
+cd beag-base-frontend
+```
+
+### Step 2: Install Dependencies
 
 ```bash
+npm install
+# or
+yarn install
+```
+
+### Step 3: Configure Environment
+
+```bash
+# Copy the example environment file
 cp .env.example .env.local
 ```
 
-Edit `.env.local` and add your Beag configuration:
+Edit `.env.local` with your configuration:
 ```env
-# Backend API
+# Backend API (update for production)
 NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
 
-# App Configuration
+# App Branding
 NEXT_PUBLIC_APP_NAME=My SaaS App
 
-# Beag.io Configuration (use your Beag ID, not API key)
+# Beag.io Configuration - CRITICAL: Get this from your Beag dashboard
 NEXT_PUBLIC_BEAG_ID=your_beag_id_here
 
-# Stripe Configuration
-NEXT_PUBLIC_STRIPE_PORTAL_URL=your_stripe_customer_portal_url_here
+# Stripe Customer Portal - Get this from Stripe dashboard
+NEXT_PUBLIC_STRIPE_PORTAL_URL=https://billing.stripe.com/p/login/your_portal_url_here
 ```
 
-### 3. Replace Beag Script
+### Step 4: Add Your Beag Script
 
-Replace the placeholder script with your actual Beag.js script:
+**Critical Step**: Replace the placeholder script with your actual Beag.js code:
 
 ```bash
-# Edit this file and replace ALL content with your actual Beag script
+# Edit this file
 nano public/beag.js
+# or use any editor
+code public/beag.js
 ```
 
-Your script should contain the actual JavaScript code from your Beag.io dashboard, not a URL.
+**Remove ALL placeholder content** and paste your actual Beag script from your Beag.io dashboard. It should look something like:
+```javascript
+(function() {
+  // Your actual Beag.js script code here
+  // This is JavaScript code, not a URL
+  // Get this from your Beag.io dashboard
+})();
+```
 
-### 4. Run the development server
+### Step 5: Start Development Server
 
 ```bash
+# This script will install dependencies and start the server
 ./start.sh
+
+# Or run manually:
+npm run dev
 ```
 
-This will automatically install dependencies and start the development server at [http://localhost:3000](http://localhost:3000).
+Visit [http://localhost:3000](http://localhost:3000) to see your SaaS frontend!
+
+## 📁 Project Architecture
 
 ## Project Structure
 
